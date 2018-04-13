@@ -1,0 +1,50 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Wordpress Beirut - Progress Bar Demo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body class="wpbeirut-example1">
+
+        <div id="loading-line" class="loader"></div>
+
+        <img src="images/wpbeirut.jpg" />
+
+        <script src="js/progressbar.min.js"></script>
+        <script>
+        // add an event listner when content loaded
+        // same concept of document ready in jquery.
+        document.addEventListener('DOMContentLoaded', function() {
+            // using default querySelector by ID and assigned to a variable.
+            // same concept of $('#loading-line') in jquery.
+            var loadingLine = document.querySelector('#loading-line');
+
+            // the line method take 2 parameters, first the target selector 
+            // and the second are a couple of options such easing, duration and color.
+            var line = new ProgressBar.Line(loadingLine,{
+                easing: 'easeInOut',
+                duration: 1500,
+                color: '#0060b2'
+            });
+
+            // to initialize the animation we need to animate method.
+            // can be from 0 to 1 , or 0.1 to 0.9 1 = 100%
+            // use a call back function that will execute once the animation done.
+            // objective of the call back is to hide the animated line once done.
+            line.animate(1,function(){
+                loadingLine.classList.add('hidden');
+            });
+
+        });
+        </script>
+
+
+    </body>
+</html>

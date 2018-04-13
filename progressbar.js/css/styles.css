@@ -1,0 +1,47 @@
+/*
+* Wordpress Beirut Community
+* Stylesheet for progress bar example 1
+*/
+.wpbeirut-example1 > .loader {
+	position:absolute;
+	transition: opacity .3s linear;
+	width:100%;
+}
+
+.wpbeirut-example1 > div#loading-line {
+	width:100%;
+	height:4px;
+	/* fix the ratio problem by hiding the 4px height and making the line thin.  */
+	/* this is why we used overflow hidden  */
+	overflow:hidden;
+}
+
+.wpbeirut-example1 > .hidden {
+	/* make it invisible by setting the opacity to 0  */
+	opacity:0;
+}
+/*
+* end example 1.
+*
+*/
+
+/*
+* Wordpress Beirut Community
+* Stylesheet for progress bar example 2
+*/
+
+.wpbeirut-example2 > .loader {
+	position:absolute;
+	transition: opacity .3s linear;
+	left:50px;
+}
+
+.wpbeirut-example2 > img {
+margin-top:35px;
+margin-left:-10px;
+}
+
+/*
+* end example 2.
+*
+*/
