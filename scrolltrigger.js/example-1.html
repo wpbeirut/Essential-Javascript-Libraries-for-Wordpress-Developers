@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Wordpress Beirut Community - Scroll based animations demo</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Erik Terwan">
+
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/wpbeirut-demo.css" rel="stylesheet">
+</head>
+<body>
+<div class="block" style="background-color:#fff">
+	<img src="images/wpbeirut.png" align="center" />
+	<h1 data-scroll="toggle(.scaleUpIn, .scaleUpOut)">Wordpress<span>&nbsp;</span>Beirut</h1>
+	<h2 data-scroll="toggle(.fromBottomIn, .fromBottomOut)">From Beirut With Love - An Open Source Developer Community</h2>
+
+	<svg viewBox="0 0 60 60">
+		<path d="M52.254 18.327c0.816-0.804 2.127-0.804 2.937 0s0.813 2.103 0 2.907l-23.724 23.49c-0.81 0.804-2.121 0.804-2.937 0l-23.724-23.49c-0.81-0.804-0.81-2.103 0-2.907 0.813-0.804 2.127-0.804 2.937 0l22.257 21.423 22.254-21.423z"></path>
+	</svg>
+</div>
+
+<!-- CSS Animations -->
+<!-- All animations are triggered by classes, so you can take advanntage of the power that css3 animations give you. -->
+<div class="block">
+	<h1 data-scroll="toggle(.fromTopIn, .fromTopOut)">WordPress is Older Than Twitter and Facebook</h1>
+	<h2 data-scroll="toggle(.fromBottomIn, .fromBottomOut)">The first version of WordPress was released on May 27, 2003. This makes WordPress older than both Facebook and Twitter.</h2>
+</div>
+
+<!-- Vanilla JS-->
+<!-- It's written in vanilla javascript, so you can use it with any framework. -->
+<div class="block">
+	<h1 data-scroll="toggle(.fromLeftIn, .fromLeftOut)">The Name – WordPress</h1>
+	<h2 data-scroll="toggle(.fromRightIn, .fromRightOut)">Christine Selleck Tremoulet, a prolific blogger and a friend of Matt Mullenweg (co-founder of WordPress), suggested the name WordPress.</h2>
+</div>
+
+<!-- Request Animation Frame-->
+<!-- It uses the window.requestAnimationFrame method so it doesn't jack the users scroll. Animations are triggered when the browser is ready for it -->
+<div class="block">
+	<h1 data-scroll="toggle(.scaleDownIn, .scaleDownOut)">WordPress Powers Nearly 27% of All Websites</h1>
+	<h2 data-scroll="toggle(.fromBottomIn, .fromBottomOut)">According to W3Techs web technologies surveys, WordPress currently powers nearly 27% of all websites.</h2>
+</div>
+<!-- Simple syntax -->
+<!-- You define the options inside the HTML attribute, so after you have initialised the ScrollTrigger you don't have to touch JavaScript again. -->
+<div class="block">
+	<h1 data-scroll="toggle(.fromRightIn, .fromRightOut)">WordPress is Open Source and Free</h1>
+	<h2 data-scroll="toggle(.fromLeftIn, .fromLeftOut)">WordPress is released under GNU GPL license, which allows anyone in the world to download and use it. The source code is freely available for anyone to study, use, modify, and build upon.</h2>
+</div>
+<!-- ScrollTrigger offers a range of options, from calling custom JavaScript functions to defining custom offsets and classes. -->
+<div class="block">
+	<h1 data-scroll="toggle(.fromRightIn, .fromRightOut)">WordPress is Not Owned by Any Company</h1>
+	<h2 data-scroll="toggle(.fromLeftIn, .fromLeftOut)">In order to protect the freedoms offered by open source, WordPress co-founder Matt Mullenweg created the WordPress Foundation. This non-profit organization owns the ‘WordPress’ trademark, and protects freedoms offered by the software’s open source license.</h2>
+	<h3 data-scroll="toggle(.fromRightIn, .fromRightOut)" data-scroll-showCallback="counter">You scrolled past this block <span>0</span> times.</h3>
+</div>
+
+<div class="block">
+	<h1 data-scroll="toggle(.fromRightIn, .fromRightOut) once">WordPress Doesn’t Have a CEO</h1>
+	<h2 data-scroll="toggle(.fromLeftIn, .fromLeftOut) once">The project is run by volunteer developers from all over the world.</h2>
+	<h3 data-scroll="toggle(.fromRightIn, .fromRightOut) once">There is a thorough decision making process in place which allows anyone to submit bug reports, patches, suggest features, and so on.</h3>
+</div>
+
+<div class="block">
+	<h1>Open source</h1>
+	<h2>The Scroll trigger project, with documentation, is on <a href="https://github.com/terwanerik/ScrollTrigger">GitHub</a>. Give it some love!</h2>
+	<h3>Written by <a href="https://erikterwan.com" target="_blank">Erik Terwan</a></h3>
+</div>
+
+<!-- calling the script library -->
+<script src="js/ScrollTrigger.min.js"></script>
+<script>
+window.counter = function() {
+	// this refers to the html element with the data-scroll-showCallback tag
+	var span = this.querySelector('span');
+	var current = parseInt(span.textContent);
+
+	span.textContent = current + 1;
+};
+
+// triggering the event listener, same concept of document ready in jquery
+document.addEventListener('DOMContentLoaded', function(){
+	// creating a new instance of the library and adding the height attribute to true.
+	// you can refere to the documentation on teh possible parameters that can be added for the library.
+  var trigger = new ScrollTrigger({
+	  addHeight: true
+  });
+});
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300,500,700" rel="stylesheet">
+</body>
+</html>

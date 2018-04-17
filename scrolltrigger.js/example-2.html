@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+		<title>Wordpress Beirut Community - Scroll based animations demo</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Erik Terwan">
+
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/wpbeirut-demo.css" rel="stylesheet">
+	
+	<style>
+	body
+	{
+		overflow: auto;
+		width: 800vw;
+	}
+	
+	div.block
+	{
+		width: 70vw;
+		float: left;
+	}
+	
+	div.block svg
+	{
+		position: absolute;
+		bottom: 50%;
+		width: 30px;
+		right: 50px;
+		
+		animation: none;
+		transform: rotate(270deg);
+	}
+	</style>
+</head>
+<body>
+<!-- Scroll Trigger -->
+<!-- Add scroll based animations to your site with ease. -->
+<div class="block" style="background-color:#fff">
+	<img src="images/wpbeirut.png" align="center" />
+	<h1 data-scroll="toggle(.scaleUpIn, .scaleUpOut) offset(-200px,0) addWidth">Wordpress<span>&nbsp;</span>Beirut</h1>
+	<h2 data-scroll="toggle(.fromBottomIn, .fromBottomOut) offset(-200px,0) addWidth">From Beirut With Love - An Open Source Developer Community</h2>
+	
+	<svg viewBox="0 0 60 60">
+		<path d="M52.254 18.327c0.816-0.804 2.127-0.804 2.937 0s0.813 2.103 0 2.907l-23.724 23.49c-0.81 0.804-2.121 0.804-2.937 0l-23.724-23.49c-0.81-0.804-0.81-2.103 0-2.907 0.813-0.804 2.127-0.804 2.937 0l22.257 21.423 22.254-21.423z"></path>
+	</svg>
+</div>
+<!-- CSS Animations -->
+<!-- All animations are triggered by classes, so you can take advantage of the power that CSS3 animations give you. -->
+<div class="block">
+	<h1 data-scroll="toggle(.fromTopIn, .fromTopOut) centerHorizontal">Billion Plugin Downloads</h1>
+	<h2 data-scroll="toggle(.fromBottomIn, .fromBottomOut) centerHorizontal">WordPress plugin downloads crossed 1.48 Billion total downloads in 2016. That’s 48% increase since 2015 when plugin downloads surpassed 1 Billion mark.</h2>
+</div>
+<!-- Vanilla JS -->
+<!-- It's written in vanilla javascript, so you can use it with any framework. -->
+<div class="block">
+	<h1 data-scroll="toggle(.fromLeftIn, .fromLeftOut) centerHorizontal">WordPress is Used by Governments All Over The World</h1>
+	<h2 data-scroll="toggle(.fromRightIn, .fromRightOut) centerHorizontal">WordPress powers thousands of government websites in all parts of the world. The list includes dozens of US Federal and State government websites, counties, small towns, high schools, etc.</h2>
+</div>
+<!-- Request Animation Frame -->
+<!-- It uses the window.requestAnimationFrame method so it doesn't jack the users scroll. Animations are triggered when the browser is ready for it. -->
+<div class="block">
+	<h1 data-scroll="toggle(.scaleDownIn, .scaleDownOut) offset(-200px,0) addWidth">WordPress in Education</h1>
+	<h2 data-scroll="toggle(.fromBottomIn, .fromBottomOut) offset(-200px,0) addWidth">WordPress is used by thousands of universities, colleges, and schools all over the world. The open source license allow students and academia to study, modify, learn, and contribute to the development of WordPress core, plugins, and themes.</h2>
+</div>
+
+<!-- Simple syntax -->
+<!-- You define the options inside the HTML attribute, so after you have initialised the ScrollTrigger you don't have to touch JavaScript again. -->
+<div class="block">
+	<h1 data-scroll="toggle(.fromRightIn, .fromRightOut) offset(-200px,0) addWidth">WordPress is Available in 68+ Languages</h1>
+	<h2 data-scroll="toggle(.fromLeftIn, .fromLeftOut) offset(-200px,0) addWidth">WordPress is fully translated into 68 languages, and it is partially translated into dozens more. Many popular WordPress plugins and themes are also available in different languages. It can also be used as multi-lingual platform with the help of plugins like WPML and Polylang.</h2>
+</div>
+
+<!-- Customizable -->
+<!-- ScrollTrigger offers a range of options, from calling custom JavaScript functions to defining custom offsets and classes. -->
+<div class="block">
+	<h1 data-scroll="toggle(.fromRightIn, .fromRightOut) offset(-200px,0) addWidth">WordPress is Written in PHP and MySQL</h1>
+	<h2 data-scroll="toggle(.fromLeftIn, .fromLeftOut) offset(-200px,0) addWidth">WordPress is written in PHP programming language and uses MySQL for database.</h2>
+</div>
+<!-- Versatile -->
+<!-- ScrollTrigger supports vertical and horizontal scrolling, check out the vertical demo  -->
+<div class="block">
+	<h1 data-scroll="toggle(.fromRightIn, .fromRightOut) offset(-200px,0) addWidth once">WordPress Meetups in 58 Countries</h1>
+	<h2 data-scroll="toggle(.fromLeftIn, .fromLeftOut) offset(-200px,0) addWidth once">WordPress meetups are smaller events organized by local communities under the umbrella of the WordPress Foundation. In 2016, there were 3193 WordPress meetups, in 58 countries, attended by 62,566 users.</h2>
+</div>
+<div class="block">
+	<h1>Open source</h1>
+	<h2>The project, with documentation, is on <a href="https://github.com/terwanerik/ScrollTrigger">GitHub</a>. Give it some love!</h2>
+	<h3>Written by <a href="https://erikterwan.com" target="_blank">Erik Terwan</a></h3>
+</div>
+
+<!-- calling the script library -->
+<script src="js/ScrollTrigger.min.js"></script>
+<script>
+window.counter = function() {
+	// this refers to the html element with the data-scrollCall tag
+	var span = this.querySelector('span');
+	var current = parseInt(span.textContent);
+	
+	span.textContent = current + 1;
+};
+
+// triggering the event listener, same concept of document ready in jquery
+document.addEventListener('DOMContentLoaded', function(){
+  var trigger = new ScrollTrigger();
+});
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300,500,700" rel="stylesheet">
+</body>
+</html>
