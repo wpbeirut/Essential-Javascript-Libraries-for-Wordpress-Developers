@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- adding the latest vuejs version from cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- the blue bg is a regular css that make the back ground of an element to set to blue -->
+    <style>
+        .blue-bg {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        we set the @click attrive so if it inactive set add a class blue-bg if active.
+        then we added an h1 with v-if condition is active = true to apear as blue bg
+    -->
+    <div id="text" @click="active = !active" :class="{'blue-bg': active}">
+        hello, world from Wordpress Beirut Community with Love.<br/>
+        Click Me.
+        <h1 v-if="active">Hello WPBeirut</h1>
+    </div>
+
+    <!-- check the js file that have comments on the vuejs code -->
+    <script src="simple.vue.js"></script>
+</body>
+</html>
